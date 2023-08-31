@@ -42,3 +42,23 @@ def even_fibonacci_2
 end
 
 even_fibonacci_2
+
+# Since every third element is even, alternative avoiding elements
+# 1 1 (2) 3 5 (8) 13 21 (34)
+
+def even_fibonacci_3
+  limit = 4000000
+  sum = 0
+  a = 1
+  b = 1
+  c = a + b
+  while c < limit
+    sum += c
+    a = b + c
+    b = a + c
+    c = a + b
+  end
+  p sum
+end
+
+even_fibonacci_3
